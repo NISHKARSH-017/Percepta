@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
+from io import BytesIO
+import matplotlib.pyplot as plt
 
 from modules.cvd import simulate_cvd
 from modules.analysis import analyze_colors
@@ -11,6 +13,19 @@ from modules.scoring import (
     get_score_message
 )
 from modules.ai import generate_explanation
+
+
+def df_to_image(df, category_column, value_column):
+    fig, ax = plt.subplots(figsize=(8, 5))
+    ax.bar(df[category_column].astype(str), df[value_column])
+    plt.xticks(rotation=45, ha="right")
+    plt.tight_layout()
+    buf = BytesIO()
+    fig.savefig(buf, format="png")
+    plt.close(fig)
+    buf.seek(0)
+    return Image.open(buf)
+
 
 
 # ---------------------------------------------------------
@@ -282,6 +297,9 @@ if uploaded_file.name.lower().endswith(".csv"):
                 "Please upload a CSV with at least two columns."
             )
 
+
+    except Exception as e:
+        st.error(f"Error reading CSV: {e}")
 
 # ---------------------------------------------------------
 # PROCESS IMAGE
