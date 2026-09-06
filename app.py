@@ -548,26 +548,3 @@ st.divider()
 st.caption(
     "Percepta — Making data visualizations accessible for everyone."
 )
-def df_to_image(df, cat_col, val_col):
-    """
-    CORRECTED ENGINE: Renders the matplotlib chart, extracts the raw pixel 
-    buffer grid from memory, and outputs a true readable image matrix array.
-    """
-    import io
-    from PIL import Image
-    import matplotlib.pyplot as plt
-    
-    # 1. Generate the figure object using the chart builder
-    fig = create_accessible_bar_chart(df, cat_col, val_col, "Internal Scan Render")
-    
-    # 2. Save the graph canvas into a raw byte buffer stream in background memory
-    buf = io.BytesIO()
-    fig.savefig(buf, format="png", dpi=100)
-    buf.seek(0)
-    
-    # 3. Close the figure background process completely to prevent memory leaks
-    plt.close(fig)
-    
-    # 4. Open it as a true image asset that the array calculations can process safely
-    img = Image.open(buf)
-    return img.convert("RGB")
