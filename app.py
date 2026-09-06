@@ -12,7 +12,7 @@ from chart_processor import load_chart, resize_image
 from modules.visualization import create_accessible_bar_chart
 from modules.scoring import calculate_accessibility_score, get_score_color, get_score_message
 from modules.ai import generate_explanation
-from modules.color_analyzer import get_dominant_colors
+from color_analyzer import get_dominant_colors
 
 # ---------------------------------------------------------
 # PAGE CONFIGURATION & STYLING
