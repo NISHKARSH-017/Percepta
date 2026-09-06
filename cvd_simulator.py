@@ -91,21 +91,21 @@ def simulate_tritanopia(image):
 
 
 # Load the original chart
-image = load_chart("test_chart.png")
+# image = load_chart("test_chart.png")
 
 # Resize the chart for processing
-image = resize_image(image)
+# image = resize_image(image)
 
 # Simulate Protanopia
-protanopia_image = simulate_protanopia(image)
-cv2.imwrite("protanopia_chart.png", protanopia_image)
+# protanopia_image = simulate_protanopia(image)
+# cv2.imwrite("protanopia_chart.png", protanopia_image)
 
 # Simulate Deuteranopia
-deuteranopia_image = simulate_deuteranopia(image)
-cv2.imwrite("deuteranopia_chart.png", deuteranopia_image)
+# deuteranopia_image = simulate_deuteranopia(image)
+# cv2.imwrite("deuteranopia_chart.png", deuteranopia_image)
 
 # Simulate Tritanopia
-tritanopia_image = simulate_tritanopia(image)
-cv2.imwrite("tritanopia_chart.png", tritanopia_image)
+# tritanopia_image = simulate_tritanopia(image)
+# cv2.imwrite("tritanopia_chart.png", tritanopia_image)
 
-print("CVD simulations complete!")
+# print("CVD simulations complete!")
