@@ -1,12 +1,4 @@
-import streamlit as st
 
-st.set_page_config(
-    page_title="Percepta",
-    page_icon="assets/favicon.png",   # browser tab icon
-    layout="wide"
-)
-
-st.logo("assets/logo.png", icon_image="assets/favicon.png")  # top-left + sidebar collapsed icon
 import streamlit as st
 import pandas as pd
 from PIL import Image
