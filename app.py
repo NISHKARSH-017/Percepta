@@ -13,7 +13,7 @@ from modules.visualization import create_accessible_bar_chart
 from modules.scoring import calculate_accessibility_score, get_score_color, get_score_message
 from modules.ai import generate_explanation
 from color_analyzer import get_dominant_colors
-from pattern_renderer.py import scan_for_accessibility_issues
+from modules.pattern_renderer.py import scan_for_accessibility_issues
 
 # ---------------------------------------------------------
 # PAGE CONFIGURATION & STYLING
