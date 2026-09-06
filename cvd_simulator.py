@@ -109,3 +109,18 @@ def simulate_tritanopia(image):
 # cv2.imwrite("tritanopia_chart.png", tritanopia_image)
 
 # print("CVD simulations complete!")
+def simulate_cvd(image, cvd_type):
+    """
+    Wrapper function to map generic layout calls from app.py
+    directly to your team's specific simulation variant functions.
+    """
+    lookup = str(cvd_type).lower().strip()
+    
+    if "protanopia" in lookup:
+        return simulate_protanopia(image)
+    elif "deuteranopia" in lookup:
+        return simulate_deuteranopia(image)
+    elif "tritanopia" in lookup:
+        return simulate_tritanopia(image)
+        
+    return image
