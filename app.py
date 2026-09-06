@@ -7,12 +7,12 @@ from PIL import Image
 # ---------------------------------------------------------
 # IMPORT TEAM BACKEND MODULES
 # ---------------------------------------------------------
-from cvd_simulator import simulate_cvd
-from accessibility import scan_for_accessibility_issues
-from dev3 import create_accessible_chart
-from scorer import calculate_score, get_score_ui_color, get_score_ui_message
-from explainer import generate_accessibility_explanation
-from color_analyzer import get_dominant_colors
+from modules.cvd_simulator import simulate_cvd
+from modules.chart_processor import load_chart, resize_image
+from modules.visualization import create_accessible_bar_chart
+from modules.scoring import calculate_accessibility_score, get_score_color, get_score_message
+from modules.ai import generate_explanation
+from modules.color_analyzer import get_dominant_colors
 
 # ---------------------------------------------------------
 # PAGE CONFIGURATION & STYLING
